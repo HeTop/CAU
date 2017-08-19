@@ -105,19 +105,19 @@
 		\centering
 		{\huge\bfseries On the estimation of spectral distribution of integrated covariance matrices of high dimensional stochastic processes\par}
 		\vspace{2cm}
-		{\Large\itshape \textsc{ Master thesis \\
+		{\Large\itshape \textsc{ Masterarbeit \\
 			\bigskip 
-			In the 1-subject Master's program in Financial Mathematics of the Faculty of Mathematics and Natural Sciences of the CAU in Kiel \\
+			im 1-Fach Masterstudiengang Finanzmathematik der Mathematisch-Naturwissenschaftlichen Fakult\"at der Christian-Albrechts-Universit\"at zu Kiel \\
 			\bigskip 
-			presented by \\
+			vorgelegt von \\
 			Aleksandr Samarin}}
 		\vfill
 		\raggedright
 		\large
-		\textsc{First referee: Prof. Dr. Mathias Vetter} \\
+		\textsc{Erstgutachter: Prof. Dr. Mathias Vetter} \\
 		\bigskip 
 		\bigskip
-		\textsc{Second referee: Prof. Dr. Jan Kallsen} \\
+		\textsc{Zweitgutachter: Prof. Dr. Jan Kallsen} \\
 		\vfill
 		\centering
 		% Bottom of the page
@@ -135,7 +135,7 @@
 	\begin{rmrk}
 		Continuous-time stochastic processes (e.g. Itô diffusions) are broadly accepted as a representation of (log-)price processes of stocks, currency or other financial assets. For example, suppose that we have multiple stocks, say, $p$ stocks, whose price processes are denoted by $S_j(t)$ and $X_j(t) \coloneqq \log S_j(t)$ for $j = 1, \dots, p$. Let
 		\[ \mathbf{X}(t) = \big(X_1(t), \dots, X_p(t)\big)^T. \]
-		Then a widely used model for $\mathbf{X}_t$ is
+		Then a widely used model for $\mathbf{X}(t)$ is
 		\begin{equation} \label{X diffeq}
 		d\mathbf{X}(t) = \boldsymbol{\mu}(t) dt + \Theta(t) d\mathbf{W}(t),
 		\end{equation}
@@ -467,7 +467,7 @@
 	\begin{defn}
 		Let $A$, $B$ be two symmetric $p \times p$ matrices. Then we write
 		\[ A \succeq B\]
-		to denote that $A-B$ is a positive semidefinite matrix. Similarly, we say that $A \preceq B$ if $A-B$ is negative semidefinite. The partial ordering defined by $\succeq$ is called L\"owner ordering.
+		to denote that $A-B$ is a positive semidefinite matrix. Similarly, we say that $A \preceq B$ if $A-B$ is negative semidefinite. The partial ordering defined by $\succeq$ is called \define{L\"owner ordering}.
 	\end{defn}
 	
 	\begin{lmm}[Weyl's Monotonicity Theorem] \label{Weyl}
@@ -521,7 +521,7 @@
     \end{proof}
     
     \begin{rmrk}
-    	In the proof of Proposition \ref{counter RCV} we saw that more volatility process varies in time, the bigger value of $\delta$ can be found, and hence more the maximum value of domain of $F^{\Sigma_p^{RCV}}$ goes away from $b(y)$. Therefore ESD of $\Sigma_p^{RCV}$ cannot be considered as consistent estimator anymore. In the next part we will study different estimator, which is based on the whole behavior of volatility process.
+    	In the proof of Proposition \ref{counter RCV} we saw that more volatility process varies in time, the bigger value of $\delta$ can be found, and hence more the maximum value of domain of $F^{\Sigma_p^{RCV}}$ goes away from $b(y)$. Therefore ESD of $\Sigma_p^{RCV}$ cannot be considered as consistent estimator anymore. In the next part we will study different estimator, which is based on the full behavior of volatility process.
     \end{rmrk}
     
     \chapter{Non-constant covolatility process}
@@ -553,7 +553,7 @@
     		\[ \Bigg( \frac{\int_{0}^{t} \sigma_j(s) \sigma_k(s)  d[W_j, W_k](s) }{\sqrt{\int_{0}^{t} \sigma_j^2(s) ds \cdot \int_{0}^{t} \sigma_k^2(s) ds}} \Bigg)_{1 \leq j,k \leq p}  =:(\rho_{jk})_{1 \leq j,k \leq p}  \]
     		is constant in $t \in [0, 1]$;
     	\end{itemize}
-    	then $\mathbf{X}(t)$ belongs to class $\mathcal{C}$.
+    	then $\mathbf{X}(t)$ belongs to the class $\mathcal{C}$.
     	
     	\begin{proof}
     		For any $t \in [0, 1]$: 
@@ -566,7 +566,7 @@
     		\[ \bigg| \int_{0}^{t}\sigma_j(s) \sigma_k(s) ds \bigg| = \sqrt{\int_{0}^{t} \sigma_j^2(s) ds \cdot \int_{0}^{t} \sigma_k^2(s) ds} . \]
     		By Cauchy-Schwartz inequality, this holds only if $\sigma_j(s)$ and $\sigma_k(s)$ are proportional to each other. Therefore, almost surely, there exists a scalar process $\gamma(t) : [0, 1] \rightarrow \MR$ and a $p$-dimensional vector $(\sigma_1, \dots, \sigma_p)^T$, such that
     		\[ (\sigma_1(t), \dots, \sigma_p(t))^T = \gamma(t) \cdot (\sigma_1, \dots, \sigma_p)^T. \]
-    		Now we show that $\mathbf{X}(t)$ belongs to class $\mathcal{C}$. In fact one can always find a $p$-dimensional standard Brownian motion $\widetilde{\mathbf{W}}(t)$, such that 
+    		Now we show that $\mathbf{X}(t)$ belongs to the class $\mathcal{C}$. In fact one can always find a $p$-dimensional standard Brownian motion $\widetilde{\mathbf{W}}(t)$, such that 
     		\[ \mathbf{W}(t) = R^{1/2}\widetilde{\mathbf{W}}(t), \]
     		where $\mathbf{W} = (W_1(t), \dots, W_p(t))^T$ and $R$ is a correlation matrix of $\mathbf{W}(t)$, which is constant for all $t \in [0, 1]$ by assumption. Hence, writing $\mu(t) = (\mu_1(t), \dots, \mu_p(t))^T$, we have
     		\[ 
@@ -581,7 +581,7 @@
     	\begin{enumerate}
     		\item In particular, if all Brownian motions in Example \ref{exmp C} are independent of each other, then $R(t)$ is an identity matrix $\mathbb{I}_{p \times p}$. Then correlation matrix process of $X_j(t)$ is a diagonal matrix and we need only to require $\rho_{jj}$ to be constant in $t$. 
     		\item The process in Example \ref{exmp X3} doesn't belong to the class $\mathcal{C}$, because its correlation structure varies in time.
-    		\item Observe that if a diffusion process $\mathbf{X}(t)$ belongs to class $\mathcal{C}$, the drift process $\boldsymbol{\mu}(t) = 0$, and $\tau_\ell$'s and $\gamma(t)$ are independent of $\mathbf{W}(t)$, then
+    		\item Observe that if a diffusion process $\mathbf{X}(t)$ belongs to the class $\mathcal{C}$, the drift process $\boldsymbol{\mu}(t) = 0$, and $\tau_\ell$'s and $\gamma(t)$ are independent of $\mathbf{W}(t)$, then
     		\[ \Delta \mathbf{X}_\ell = \int_{\tau_{\ell-1}}^{\tau_\ell} \gamma(t) \Lambda d\mathbf{W}(t) \stackrel{d}{=} \sqrt{\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma^2(t)dt} \cdot \overline{\Sigma}^{1/2} \cdot \mathbf{Z}_\ell, \]
     		where $ \overline{\Sigma}^{1/2}$ is the nonnegative square root matrix of
     		\[\overline{\Sigma} \coloneqq \Lambda \Lambda^T \]
@@ -850,7 +850,7 @@
     	Then
     	\[ \widetilde{S}_n = \mathbf{AA}^T \quad \text{and} \quad S_n = \mathbf{BB}^T. \]
     	By Lemma 2.7 of Bai (1999)
-    	\[L^4(F^{\widetilde{S}_n}, F^{S_n}) \leq \frac{2}{p^2} \tr((A-B)(A-B)^T) \cdot \tr(\widetilde{S}_n + S_n). \]
+    	\[L^4(F^{\widetilde{S}_n}, F^{S_n}) \leq \frac{2}{p^2} \tr((\mathbf{A}-\mathbf{B})(\mathbf{A}-\mathbf{B})^T) \cdot \tr(\widetilde{S}_n + S_n). \]
     	By condition (ii),
     	\[ \tr((\mathbf{A}-\mathbf{B})(\mathbf{A}-\mathbf{B})^T)  = \sum_{\ell=1}^{n} \sum_{j=1}^{p} v_{j\ell}^2 \leq np \cdot \varepsilon_p^2. \]
     	Moreover,
@@ -898,7 +898,7 @@
     	\]
     	The almost sure convergence then follows from the Borel-Cantelli lemma\footnote{
     		Let $X_1, X_2, \dots$ be a sequence of random variables in some probability space and $\varepsilon > 0$ be arbitrary.
-    		Then
+    		Then Borel-Cantelli lemma states that
     		\[ \sum_{n=1}^{\infty} \MP(|X_n| \geq \varepsilon) < \infty \Longrightarrow X_n \xrightarrow{a.s.} 0.  \]
     	}.
     \end{proof}
@@ -1090,7 +1090,7 @@
     		\begin{equation}
     		d\mathbf{X}(t) = \Theta(t)  d\mathbf{W}(t) + a\Delta_U(t)dt,
     		\end{equation}
-    		where $a$ is some positive constant and $\Delta_U(t) = (\delta_U(t), \dots, \delta_U(t))^T$ is a vector of Dirac delta functions shifted to $U$. In other words, all the components of $\mathbf{X}(t)$ make a jump of size $a$ at the same random time $t = U$. Let us denote by $\mathbf{X^c}(t)$ the continuous part of $\mathbf{X}(t)$:
+    		where $a$ is a known positive constant and $\Delta_U(t) = (\delta_U(t), \dots, \delta_U(t))^T$ is a vector of Dirac delta functions shifted to $U$. In other words, all the components of $\mathbf{X}(t)$ make a jump of size $a$ at the same random time $t = U$. Let us denote by $\mathbf{X^c}(t)$ the continuous part of $\mathbf{X}(t)$:
     		\[ d\mathbf{X^c}(t) = \Theta(t) d\mathbf{W}(t). \]
     		Moreover, assume that we have equidistant observation times $\tau_{\ell} = \ell / n$ and let $\ell'$ be the index of interval, where $U$ is located:
     		\[ U \in \bigg[\frac{\ell'-1}{n}, \frac{\ell'}{n}\bigg). \]
@@ -1102,7 +1102,9 @@
     		& =  \sum_{\ell=1}^{n}\Delta \mathbf{X^c}_\ell(\Delta \mathbf{X^c}_\ell)^T + a\Delta \mathbf{X^c}_{\ell'} \cdot \mathbb{U}_{1 \times p} + a(\Delta \mathbf{X^c}_{\ell'} \cdot \mathbb{U}_{1 \times p})^T + a^2\mathbb{U}_{p \times p} ,
     		\end{aligned}
     		\]
-    		where $\mathbb{U}_{k \times j}$ stands for $k \times j$ matrix filled with ones. Note that the elements of $\Delta \mathbf{X^c}_{\ell'} \cdot \mathbb{U}_{1 \times p}$ are i.i.d. $ \sim \mathcal{N}\big(0, \Gamma_{\ell'}/n )$ with $\Gamma_{\ell'}=\int_{(\ell' - 1)/n}^{\ell' / n} \gamma^2(t) dt$. Therefore, if we set $n \rightarrow \infty$, $\tr(\Sigma_p^{RCV})$ will converge to the same value as before plus $a^2p$. Also,
+    		where $\mathbb{U}_{k \times j}$ stands for $k \times j$ matrix filled with ones. Note that the elements of $\Delta \mathbf{X^c}_{\ell'} \cdot \mathbb{U}_{1 \times p}$ are i.i.d. $\sim \mathcal{N}\big(0, \Gamma_{\ell'}/n )$ with $\Gamma_{\ell'}=\int_{(\ell' - 1)/n}^{\ell' / n} \gamma^2(t) dt$. Therefore, if $\tr(\Sigma_p)/p$ converges to $\theta$ as in Lemma \ref{trace conv}, then
+    		\[ \lim_{n \rightarrow \infty} \frac{\tr(\Sigma_p^{RCV})}{p} \rightarrow \theta + a^2 \quad \text{a.s.} \]
+    		Also,
     		\[
     		\| \Delta \mathbf{X}_{\ell'} \|_2^2 = \| \Delta \mathbf{X^c}_{\ell'} + a\mathbb{U}_{p \times 1} \|_2^2  = \sum_{j=1}^{p} (\Delta X^c_{\ell'})^2 + 2a\sum_{j=1}^{p} \Delta X^c_{\ell'} + a^2p.
     		\]
@@ -1197,8 +1199,8 @@
     	for all $1 \leq j \leq p$, where
     	\[ \Gamma_\ell = \int_{(\ell-1)/n}^{\ell / n} \gamma^2(t)dt = 0.0009 + 0.0008 \cdot \frac{ \sin(2\pi \ell / n )-\sin(2\pi (\ell-1) / n ) }{2\pi}. \]
     	The simulations show that TVARCV estimator converges asymptotically to Marchenko-Pastur law, while RCV doesn't. \\
-    	Firstly, we are in a setting $y = 4$. Then $a = 1$ and $b = 9$. The process $\mathbf{X}(t)$, LSD histograms and plot of the density of Marchenko-Pastur law are shown on Figure 6.1. \\
-    	In the second case, we run simulations for $y = 1$. Then $a = 0$ and $b = 4$. We will compare it with the next setting.
+    	Firstly, we are in a setting $y = 4$. Then $a = \sigma^2 = 0.0009$ and $b = 9\sigma^2 = 0.0081$. The process $\mathbf{X}(t)$, LSD histograms and plot of the density of Marchenko-Pastur law are shown on Figure 6.1. \\
+    	In the second case, we run simulations for $y = 1$. Then $a = 0$ and $b = 4\sigma^2 = 0.0036$. We will compare it with the next setting.
     \end{exmp}
     
     \begin{figure}[ht]
@@ -1207,7 +1209,7 @@
     		\caption{ $\mathbf{X}(t)$ from Example \ref{SimCos}, $n = 1000$, $p=4000$, $\sigma^2 = 0.0009$ }
     		\smallskip
     		\small
-    		In this setting $y = p/n = 4$. One the left panel one sees four thousands independent stochastic processes. On the right blue histogram shows ESD of $\Sigma_p^{RCV}$, green histogram -- ESD of $\widehat{\Sigma}_p$ and red curve -- Marchenko-Pastur law. Note point mass equal to $0.75$ at the origin.
+    		In this setting $y = p/n = 4$. On the left panel one can see paths of four thousands independent stochastic processes. On the right blue histogram shows ESD of $\Sigma_p^{RCV}$, green histogram -- ESD of $\widehat{\Sigma}_p$ and red curve -- Marchenko-Pastur law. Note that distribution function makes jump at $0$ to $(1-1/y) = 0.75$ and then stays flat until it reaches the value of $a = 0.0009$.
     	\end{center}
     \end{figure}
     
@@ -1739,12 +1741,11 @@ def get_data_stochastic_gamma(n, p):
    	\bibliography{biblio}
    	
    	\newpage
+   	\thispagestyle{empty}
    	\large
-   	\textbf{Declaration} \\
+   	\textbf{Erkl\"arung} \\
    	
-   	I hereby declare that I have made the present work independent and without any help whatsoever, and have not used any sources other than those indicated.\\
+   	Hiermit erkl\"are ich, dass ich die vorliegende Arbeit selbst\"andig und ohne fremde Hilfe angefertigt und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe. \\
    	
-   	Furthermore, I assure that this work has not yet been presented as a dissertation elsewhere. \\
-   	
-   	Datum, unterschrift
+   	Weiterhin versichere ich, dass diese Arbeit noch nicht als Abschlussarbeit an anderer Stelle vorgelegen hat. \\
 \end{document}
