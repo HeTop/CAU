@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.4)  19 AUG 2017 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.4)  2 OCT 2017 09:56
 entering extended mode
 **document.tex
 (document.tex
@@ -941,24 +941,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
-[5] [6] <X3.png, id=40, 1012.78375pt x 431.6125pt>
+[5] [6] <X3.png, id=39, 1012.78375pt x 431.6125pt>
 File: X3.png Graphic file (type png)
  <use X3.png>
 Package pdftex.def Info: X3.png used on input line 218.
 (pdftex.def)             Requested size: 405.10632pt x 172.64194pt.
-
+ [7 <./X3.png>]
 Overfull \hbox (1.44328pt too wide) in paragraph at lines 235--237
 \T2A/cmr/m/n/10.95 is called \T2A/cmr/bx/it/10.95 quadratic vari-a-tion \T2A/cm
 r/m/n/10.95 of $\OML/cmm/m/it/10.95 X$\T2A/cmr/m/n/10.95 . Note that for de-ter
 -min-is-tic pro-cesses quadratic
  []
 
-[7 <./X3.png>]
+[8]
 Overfull \hbox (102.90247pt too wide) detected at line 277
 [] []
  []
 
-[8] [9]
+[9]
 Overfull \hbox (10.18266pt too wide) detected at line 320
 [] [] \OT1/cmr/m/n/10.95 \OT1/cmr/bx/n/10.95 X[]\OT1/cmr/m/n/10.95 (\OT1/cmr/
 bx/n/10.95 X[]\OT1/cmr/m/n/10.95 )[] = [] [] [] [] [] \OML/cmm/m/it/10.95 :
@@ -968,7 +968,7 @@ bx/n/10.95 X[]\OT1/cmr/m/n/10.95 )[] = [] [] [] [] [] \OML/cmm/m/it/10.95 :
 
 ]
 Chapter 2.
-[13] [14] <MP.png, id=75, 1008.76875pt x 430.60875pt>
+[13] [14] <MP.png, id=74, 1008.76875pt x 430.60875pt>
 File: MP.png Graphic file (type png)
  <use MP.png>
 Package pdftex.def Info: MP.png used on input line 448.
@@ -991,250 +991,250 @@ m/it/10.95 and $\OT1/cmr/bx/n/10.95 w[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.
 Chapter 4.
 [39
 
-] [40]
-Chapter 5.
-[41
+] [40] [41] [42
 
 ]
+Chapter 5.
+[43]
 Overfull \hbox (2.51003pt too wide) in paragraph at lines 1157--1158
 []\T2A/cmr/m/n/10.95 To con-struct a Pois-son pro-cess, we be-gin with a se-que
 nce of ar-rival times $\OML/cmm/m/it/10.95 []; []; [] $\T2A/cmr/m/n/10.95 ,
  []
 
-[42] [43] [44]
+[44] [45] [46]
 Chapter 6.
-<XCos2.png, id=182, 1131.22626pt x 431.6125pt>
+<XCos2.png, id=187, 1131.22626pt x 431.6125pt>
 File: XCos2.png Graphic file (type png)
  <use XCos2.png>
-Package pdftex.def Info: XCos2.png used on input line 1231.
+Package pdftex.def Info: XCos2.png used on input line 1247.
 (pdftex.def)             Requested size: 452.48248pt x 172.64194pt.
 
-Overfull \hbox (34.2288pt too wide) in paragraph at lines 1231--1232
+Overfull \hbox (34.2288pt too wide) in paragraph at lines 1247--1248
  [] 
  []
 
-[45
+[47
 
-] <XCos.png, id=186, 1131.22626pt x 431.6125pt>
+] <XCos.png, id=191, 1131.22626pt x 431.6125pt>
 File: XCos.png Graphic file (type png)
  <use XCos.png>
-Package pdftex.def Info: XCos.png used on input line 1256.
+Package pdftex.def Info: XCos.png used on input line 1272.
 (pdftex.def)             Requested size: 452.48248pt x 172.64194pt.
 
-Overfull \hbox (34.2288pt too wide) in paragraph at lines 1256--1257
+Overfull \hbox (34.2288pt too wide) in paragraph at lines 1272--1273
  [] 
  []
 
-<Xcostimes.png, id=187, 1131.22626pt x 431.6125pt>
+<Xcostimes.png, id=192, 1131.22626pt x 431.6125pt>
 File: Xcostimes.png Graphic file (type png)
  <use Xcostimes.png>
-Package pdftex.def Info: Xcostimes.png used on input line 1263.
+Package pdftex.def Info: Xcostimes.png used on input line 1279.
 (pdftex.def)             Requested size: 452.48248pt x 172.64194pt.
 
-Overfull \hbox (34.2288pt too wide) in paragraph at lines 1263--1264
+Overfull \hbox (34.2288pt too wide) in paragraph at lines 1279--1280
  [] 
  []
 
-[46 <./XCos2.png>] [47 <./XCos.png> <./Xcostimes.png>]
-<XCIR.png, id=197, 986.68625pt x 431.6125pt>
+[48 <./XCos2.png>] [49 <./XCos.png> <./Xcostimes.png>]
+<XCIR.png, id=203, 986.68625pt x 431.6125pt>
 File: XCIR.png Graphic file (type png)
  <use XCIR.png>
-Package pdftex.def Info: XCIR.png used on input line 1294.
+Package pdftex.def Info: XCIR.png used on input line 1310.
 (pdftex.def)             Requested size: 394.66751pt x 172.64194pt.
- [48]
-<Xjumps.png, id=201, 1117.17375pt x 433.62pt>
+ [50]
+<Xjumps.png, id=207, 1117.17375pt x 433.62pt>
 File: Xjumps.png Graphic file (type png)
  <use Xjumps.png>
-Package pdftex.def Info: Xjumps.png used on input line 1320.
+Package pdftex.def Info: Xjumps.png used on input line 1337.
 (pdftex.def)             Requested size: 446.86159pt x 173.44492pt.
 
-Overfull \hbox (28.60791pt too wide) in paragraph at lines 1320--1321
+Overfull \hbox (28.60791pt too wide) in paragraph at lines 1337--1338
  [] 
  []
 
-<XCompound.png, id=202, 1018.80624pt x 431.6125pt>
+<XCompound.png, id=208, 1018.80624pt x 431.6125pt>
 File: XCompound.png Graphic file (type png)
  <use XCompound.png>
-Package pdftex.def Info: XCompound.png used on input line 1330.
+Package pdftex.def Info: XCompound.png used on input line 1347.
 (pdftex.def)             Requested size: 407.51527pt x 172.64194pt.
 
-<XCompounduni.png, id=203, 1013.7875pt x 431.6125pt>
+<XCompounduni.png, id=209, 1013.7875pt x 431.6125pt>
 File: XCompounduni.png Graphic file (type png)
  <use XCompounduni.png>
-Package pdftex.def Info: XCompounduni.png used on input line 1337.
+Package pdftex.def Info: XCompounduni.png used on input line 1354.
 (pdftex.def)             Requested size: 405.50783pt x 172.64194pt.
 
-[49 <./XCIR.png>] <counter.png, id=209, 1004.75375pt x 431.6125pt>
+[51 <./XCIR.png>] <counter.png, id=214, 1004.75375pt x 431.6125pt>
 File: counter.png Graphic file (type png)
 
 <use counter.png>
-Package pdftex.def Info: counter.png used on input line 1363.
+Package pdftex.def Info: counter.png used on input line 1380.
 (pdftex.def)             Requested size: 401.89438pt x 172.64194pt.
- <counter2.png, id=210, 1004.75375pt x 431.6125pt>
+ <counter2.png, id=215, 1004.75375pt x 431.6125pt>
 File: counter2.png Graphic file (type png)
 
 <use counter2.png>
-Package pdftex.def Info: counter2.png used on input line 1370.
+Package pdftex.def Info: counter2.png used on input line 1387.
 (pdftex.def)             Requested size: 401.89438pt x 172.64194pt.
- [50 <./Xjumps.png>] [51 <./XCompound.png> <./XCompounduni.png>] [52 <./counter
+ [52 <./Xjumps.png>] [53 <./XCompound.png> <./XCompounduni.png>] [54 <./counter
 .png> <./counter2.png>]
 Appendix A.
-[53
+[55
 
-] [54
+] [56
 
 ]
 Appendix B.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/09/06 1.5e listings language file
-) [55]
+) [57]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56]
-Overfull \hbox (28.15086pt too wide) in paragraph at lines 1483--1484
+ [58]
+Overfull \hbox (28.15086pt too wide) in paragraph at lines 1500--1501
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (20.95079pt too wide) in paragraph at lines 1495--1496
+Overfull \hbox (20.95079pt too wide) in paragraph at lines 1512--1513
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [57]
-Overfull \hbox (6.55064pt too wide) in paragraph at lines 1523--1524
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (6.55064pt too wide) in paragraph at lines 1524--1525
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (64.15123pt too wide) in paragraph at lines 1531--1532
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][] 
- []
-
-
-Overfull \hbox (28.15086pt too wide) in paragraph at lines 1537--1538
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.55101pt too wide) in paragraph at lines 1555--1556
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [58]
-Overfull \hbox (42.55101pt too wide) in paragraph at lines 1565--1566
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (13.75072pt too wide) in paragraph at lines 1584--1585
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (56.95116pt too wide) in paragraph at lines 1590--1591
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (49.75108pt too wide) in paragraph at lines 1603--1605
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (78.55138pt too wide) in paragraph at lines 1605--1606
-[][][][][][][][][][][][][][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59]
-Overfull \hbox (71.3513pt too wide) in paragraph at lines 1606--1608
-[][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (6.55064pt too wide) in paragraph at lines 1540--1541
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.55064pt too wide) in paragraph at lines 1631--1632
+Overfull \hbox (6.55064pt too wide) in paragraph at lines 1541--1542
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.15123pt too wide) in paragraph at lines 1548--1549
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][] 
+ []
+
+
+Overfull \hbox (28.15086pt too wide) in paragraph at lines 1554--1555
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (42.55101pt too wide) in paragraph at lines 1572--1573
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
-Overfull \hbox (64.15123pt too wide) in paragraph at lines 1650--1651
+Overfull \hbox (42.55101pt too wide) in paragraph at lines 1582--1583
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (13.75072pt too wide) in paragraph at lines 1601--1602
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (56.95116pt too wide) in paragraph at lines 1607--1608
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (49.75108pt too wide) in paragraph at lines 1620--1622
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.55064pt too wide) in paragraph at lines 1657--1658
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (49.75108pt too wide) in paragraph at lines 1668--1669
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (78.55138pt too wide) in paragraph at lines 1622--1623
+[][][][][][][][][][][][][][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Overfull \hbox (35.35094pt too wide) in paragraph at lines 1721--1722
-[][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (71.3513pt too wide) in paragraph at lines 1623--1625
+[][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (28.15086pt too wide) in paragraph at lines 1728--1729
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (6.55064pt too wide) in paragraph at lines 1648--1649
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62]
-Overfull \hbox (20.95079pt too wide) in paragraph at lines 1748--1749
+Overfull \hbox (64.15123pt too wide) in paragraph at lines 1667--1668
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.55064pt too wide) in paragraph at lines 1674--1675
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (49.75108pt too wide) in paragraph at lines 1685--1686
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Overfull \hbox (35.35094pt too wide) in paragraph at lines 1738--1739
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (28.15086pt too wide) in paragraph at lines 1745--1746
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-(document.bbl [63] [64
 
-]) [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1768--1769
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
+Overfull \hbox (20.95079pt too wide) in paragraph at lines 1765--1766
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+(document.bbl [65] [66
+
+]) [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1770--1771
+Underfull \hbox (badness 10000) in paragraph at lines 1786--1787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1772--1773
+Underfull \hbox (badness 10000) in paragraph at lines 1788--1789
 
  []
 
-[66] (document.aux) ) 
+[68] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 9441 strings out of 493698
- 128865 string characters out of 3144404
- 238158 words of memory out of 3000000
- 12529 multiletter control sequences out of 15000+200000
+ 9443 strings out of 493698
+ 128890 string characters out of 3144404
+ 239177 words of memory out of 3000000
+ 12531 multiletter control sequences out of 15000+200000
  36903 words of font info for 86 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  37i,13n,75p,1136b,2044s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1274,9 +1274,9 @@ e1/public/cm-super/sfrm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /cm-super/sfsl1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super
 /sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbtt.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on document.pdf (66 pages, 2761311 bytes).
+Output written on document.pdf (68 pages, 2760824 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
+ 401 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

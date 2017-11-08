@@ -133,7 +133,7 @@
 	
 	\section{Motivation}
 	\begin{rmrk}
-		Continuous-time stochastic processes (e.g. Itô diffusions) are broadly accepted as a representation of (log-)price processes of stocks, currency or other financial assets. For example, suppose that we have multiple stocks, say, $p$ stocks, whose price processes are denoted by $S_j(t)$ and $X_j(t) \coloneqq \log S_j(t)$ for $j = 1, \dots, p$. Let
+		In the last few decades behavior of financial instruments were studied extensively from the probability theory point of view. Now continuous-time stochastic processes such as Itô diffusions are broadly accepted as a representation of (log-)price processes of stocks, currency or other financial assets. For example, suppose that we have multiple stocks, say, $p$ stocks, whose price processes are denoted by $S_j(t)$ and $X_j(t) \coloneqq \log S_j(t)$ for $j = 1, \dots, p$. Let
 		\[ \mathbf{X}(t) = \big(X_1(t), \dots, X_p(t)\big)^T. \]
 		Then a widely used model for $\mathbf{X}(t)$ is
 		\begin{equation} \label{X diffeq}
@@ -145,7 +145,7 @@
 			\item $\Theta(t)$ -- $p \times p$ \define{covolatility process},
 			\item $\mathbf{W}(t)$ -- $p$-dimensional standard Brownian motion.
 		\end{itemize}
-		If $\Theta(t) = \sigma(t) \cdot \mathbb{I}_{p \times p} $, we are in the case, where all the price processes are independent of each other and we can study them separately. In practice price on one good or stock can strongly depend on the price of the other. In this paper we consider the special class of possibly dependent processes, which interrelation stays stable in time. And since we are dealing with a high frequency data, we assume all the processes to live on a fixed time span, namely $t \in [0, 1]$. \\
+		If we take $\Theta(t) = \sigma(t) \cdot \mathbb{I}_{p \times p} $, where $\mathbb{I}_{p \times p}$ is the $p \times p$ identity matrix, then we are in the simplest case, where all the price processes are independent of each other and we can study them separately. However, in the market price on one good, stock or any other asset can strongly depend on the price of another. In this paper we consider the special class of dependent processes, which interrelation stays stable in time. Moreover, we assume that we can observe the processes $X_j(t)$ at high frequency synchronously (e.g. each second during one day). And since we are dealing with a high frequency data, we assume all the processes to live on a fixed time span, namely $t \in [0, 1]$. \\
 	\end{rmrk}
 
 
@@ -154,7 +154,7 @@
 			\item The \define{integrated covariance matrix (ICV)} is defined as follows
 			\[\Sigma_p \coloneqq \int_0^1\Theta(t) \cdot \Theta^T(t) dt.\]
 			If $p=1$ ICV is called \define{integrated volatility}.
-			\item Assume that we can observe the processes $X_j(t)$ at high frequency synchronously, say at time points $ \{\tau_\ell\}_{0 \leq \ell \leq n}$:
+			\item Assume that we observe the processes $X_j(t)$ at time points $ \{\tau_\ell\}_{0 \leq \ell \leq n}$:
 			\[ X_j(\tau_\ell) = \log S_j(\tau_\ell), \quad \ell = 0, 1, \dots, n, j = 1, \dots, p. \]
 			 Then \define{realized covariance matrix (RCV)} is
 			\begin{equation} \label{RCV}
@@ -209,7 +209,7 @@
 		\begin{enumerate}
 			\item 
 			Intuitively, one can wish zero elements of the ICV matrix to show the independence of one process from another. But in Example \ref{exmp X3}, where all the processes are related with each other in some sense, we still have zero values in $\Sigma_3$. It should be noted that if $\mathbf{X}(t)$ is a vector of log-price processes, then over short time period, say, one day, it is reasonable to assume that the correlation structure doesn't change.
-			\item One of the major problems in most of the models, based on the theory of stochastic calculus and applied to financial markets, is the estimation of true covariance. Without knowing how volatile is the price process, one can never estimate the fair price of the asset. In our case the final goal is to find a reasonable estimator of an ICV matrix. In the next section we show how RCV matrix does the job.
+			\item One of the major problems in most of the models, based on the theory of stochastic calculus and applied to financial markets, is the estimation of true covariance. For example, without any knowledge of how volatile is the price process of the underlying instrument, one can never estimate the fair price of an option. In our case the final goal is to find a reasonable estimator of an ICV matrix. In the next section we show how RCV matrix does the job.
 		\end{enumerate}
 	\end{rmrk}
 	
@@ -378,7 +378,7 @@
 	
 	\begin{exmp} \label{ESD finite p}
 		Take the simplest case with $\boldsymbol{\mu}(t) = 0$ and $\Theta(t) = \gamma(t) \cdot \mathbb{I}_{p \times p}$ with some deterministic process $\gamma(t)$. Let also $\sigma^2 = \int_{0}^{1} \gamma^2(t) dt$, then $\Sigma_p = \sigma^2 \mathbb{I}_{p \times p}$ and its ESD
-		\[ F^{\Sigma_p}(x) = 1_{[\sigma^2, \infty)}(x) \]
+		\[ F^{\Sigma_p}(x) = \mathbf{1}_{[\sigma^2, \infty)}(x) \]
 		is a simple step function. In general case, where $\Sigma_p$ have different eigenvalues, ESD is a combination of such step functions.
 	\end{exmp}
 	
@@ -423,13 +423,13 @@
 		\begin{enumerate}
 			\item It is easy to see that for ESD $F$ its Stieltjes transform can be found by formula
 			\begin{equation} \label{Stieltjes transform eig}
-			m_F(z) = \frac{1}{p} \sum_{j=1}^p \frac{1}{\lambda_j - z} = \frac{1}{p} \tr(S_p-z\mathbb{I}_{p \times p})^{-1} .
+			m_F(z) = \frac{1}{p} \sum_{j=1}^p \frac{1}{\lambda_j - z} = \frac{1}{p} \tr(S_p-z\mathbb{I}_{p \times p})^{-1}.
 			\end{equation}
 			\item Schematically Proposition \ref{MP law} can be depicted as follows
 			\[(F^{\Sigma_p^{RCV}}, F^{\Sigma_p}) \xrightarrow[p,n \rightarrow \infty]{} (F, H).\]
-			Our goal is to find $F^{\Sigma_p}$ for sufficiently large $p$. First, we approximate $F$ with $F^{\Sigma_p^{RCV}}$ and calculate $m_F(z)$, using, for example, \eqref{Stieltjes transform eig}. Then we derive $H$ via Marchenko-Pastur equation \eqref{MP eq}, and use it as approximation of $F^{\Sigma_p}$. HOW TO DERIVE H???
+			Our goal is to find ESD $F^{\Sigma_p}$ for sufficiently large $p$. First, we approximate LSD $F$ with $F^{\Sigma_p^{RCV}}$ and calculate Stieltjes transform $m_F(z)$, using, for example, \eqref{Stieltjes transform eig}. Then we can derive $H$ via Marchenko-Pastur equation \eqref{MP eq}, and use it as approximation of $F^{\Sigma_p}$. The corresponding algorithm could be found in El. Karoui (2008) \cite{Karoui}.
 			\item Note that if $y \rightarrow 0$ limiting distribution function $F$ of $S_p$ matches limiting distribution function $H$ of $\Sigma_p$. This is the case, when $n$ grows faster than $p$ and as we stated before $\Sigma_p^{RCV}$ converges to $\Sigma_p$.
-			\item In the special case when $\Sigma_p = \sigma^2 \mathbb{I}_{p \times p}$, where $\mathbb{I}_{p \times p}$ is the $p \times p$ identity matrix, the LSD $F$ has an analytical expression, which can be derived from the following proposition.
+			\item In the special case $\Sigma_p = \sigma^2 \mathbb{I}_{p \times p}$, the LSD $F$ has an analytical expression, which can be derived from the following proposition.
 		\end{enumerate}
 	\end{rmrk}
 	
@@ -438,7 +438,7 @@
 		\[ f(x) = \Big(1-\frac{1}{y}\Big)_+\delta_0(x) + \frac{1}{2 \pi \sigma^2 xy} \sqrt{(b-x)(x-a)} \mathbf{1}_{[a,b]}(x), \]
 		where $\delta_0(x)$ is a Dirac delta function and
 		\[ a = \sigma^2(1-\sqrt{y})^2 \quad \text{and} \quad b = \sigma^2(1+\sqrt{y})^2. \]
-		The LSD $F$ in this proposition is called the Marchenko-Pastur law with ratio index $y$ and scale index $\sigma^2$, and will be denoted by $\mathcal{MP}(y, \sigma^2)$.
+		The LSD $F$ in this proposition is called the Marchenko-Pastur law with ratio index $y$ and scale index $\sigma^2$, and will be denoted by $\mathcal{MP}(y, \sigma^2)$. Analytical expression for $F$ can be found in Appendix A.
 	\end{prps}
 	\begin{proof}
 		See, e.g., Theorem 2.5 in Bai (1999) \cite{Bai}.
@@ -642,7 +642,7 @@
     \end{proof}
     
     \begin{rmrk}
-    	The idea of Proposition \ref{prps 6} is the stating of necessary and sufficient condition for limiting spectral distribution to exist. If \eqref{prps 6 eq} holds, then we can claim the convergence of RCV to some law.
+    	The idea of Proposition \ref{prps 6} is to state necessary and sufficient condition for limiting spectral distribution to exist. If \eqref{prps 6 eq} holds, then we can claim the convergence of ESD of RCV to some probability law.
     \end{rmrk}
     
     \begin{thm} \label{Thm 1}
@@ -686,15 +686,16 @@
     	Below we assume that $H$ is not a delta measure at $0$. 
     	We will skip most of the technical details here, but provide main ideas of the proof instead. The major steps are
     	\begin{itemize}
-    		\item Define the sequences $(m_n(z))_n$ and $(M_n(z))_n$ in the similar way as $m_{F^w}(z)$ and $M(z)$, but with respect to the realization of $\mathbf{X}(t)$ for some $n$.
-    		\item Show the convergence of such sequences to $m(z)$ and $M(z)$.
-    		\item Conclude that the limit is unique.
+    		\item Define the sequences $(m_n(z))_n$, $(\widetilde{m}_n(z))_n$ and $(M_n(z))_n$ in the similar way as $m_{F^w}(z)$ and $M(z)$, but with respect to the realization of $\mathbf{X}(t)$ for some $n$.
+    		\item Show the convergence of such sequences to $m(z)$, $\widetilde{m}(z)$ and $M(z)$.
+    		\item Conclude that these limits are unique.
     		\item Using Proposition \ref{prps 6} state the convergence of probability measure.
     	\end{itemize}
     	Starting from the first step we rewrite equation \eqref{Thm 1 eq} as follows:
     	\[ m_{F^w}(z) = \frac{\tr(-zM(z)\Sigma -z\mathbb{I}_{p \times p})^{-1}}{p}. \]
     	Let us define
-    	\[ m_n(z) = \frac{\tr(S-z\mathbb{I}_{p \times p})^{-1}}{p} \]
+    	\[ m_n(z) = \frac{\tr(S-z\mathbb{I}_{p \times p})^{-1}}{p}, \]
+    	\[ \widetilde{m}_n(z) = \frac{ \tr(\Sigma^{1/2} (S-z \mathbb{I}_{p \times p}) \Sigma^{1/2})  }{p} \]
     	and
     	\[ M_n(z) = -\frac{1}{z} \sum_{\ell=1}^{n} \frac{w_\ell}{ 1+w_\ell \mathbf{r}_\ell^T (S_{(\ell)}-z\mathbb{I}_{p \times p})^{-1} \mathbf{r}_\ell},  \]
     	where
@@ -703,7 +704,7 @@
     	\[ \mathbf{r}_\ell \coloneqq \Sigma^{1/2}\mathbf{Z}_\ell. \]
     	The idea is to show the convergence
     	\begin{equation} \label{3.7}
-    	     \frac{\tr(-zM_n(z)\Sigma -z\mathbb{I}_{p \times p})^{-1}  }{p} \rightarrow m_n
+    	     \frac{\tr(-zM_n(z)\Sigma -z\mathbb{I}_{p \times p})^{-1}  }{p} \rightarrow m_n(z)
     	\end{equation}
     	first. Using some lemmas from linear algebra and prior assumptions, we claim that \eqref{3.7} holds. Then we state that if $m_n(z)$ converges to $m(z)$, then
     	\begin{equation} \label{3.22}
@@ -713,7 +714,6 @@
     	\begin{equation} \label{3.23}
     	\int_{0}^{1} \frac{1}{1 + y \widetilde{m}(z) w(s)} ds = 1 - y (1 + zm(z)).
     	\end{equation}
-    	BLA BLA BLA EXPLAIN IT!!!
     	Therefore, by convergence of $F^{\Sigma_p}$ to $H$
     	\[ 
     	\frac{\tr(-zM_n(z)\Sigma -z\mathbb{I}_{p \times p})^{-1}  }{p} \rightarrow -\frac{1}{z} \int_{\tau \in \MR} \frac{1}{\tau M(z) + 1}dH(\tau). \]
@@ -740,8 +740,8 @@
     	\end{equation}
     	For the third step we show that for those $z = i \upsilon$ with $\upsilon$ sufficiently large, there is at most one triple
     	\[ (m(z), M(z), \widetilde{m}(z)) \in \mathbb{Q}_1 \times \mathbb{Q}_1 \times \mathbb{Q}_1, \]
-    	that solves the equations \eqref{3.22}, \eqref{3.27} and \eqref{3.29}. THAT CAN BE SHOWN HOW???
-    	For the fourth step it remains to verify that $\lim_{\upsilon \rightarrow \infty} i \upsilon \cdot m(i \upsilon) = -1$. In fact, using \eqref{3.27} we get that
+    	that solves the equations \eqref{3.22}, \eqref{3.27} and \eqref{3.29}.
+    	For the final step it remains to verify that $\lim_{\upsilon \rightarrow \infty} i \upsilon \cdot m(i \upsilon) = -1$. In fact, using \eqref{3.27} we get that
     	\begin{equation} \label{3.31}
     		i \upsilon \cdot m(i \upsilon)  = -\int_{\tau \in \MR} \frac{1}{ 1+\tau M(i \upsilon) }dH(\tau).
     	\end{equation}
@@ -775,7 +775,7 @@
     \end{rmrk}
     
     \begin{prps} \label{prps ups}
-    	Suppose that for all $p$, $X^{(p)}(t)$ is a $p$-dimensional process in class $\mathcal{C}$ with some drift process $\boldsymbol{\mu}(t) = (\mu_1^{(p)}(t), \dots, \mu_p^{(p)}(t))^T$, covolatility process $\Theta^{(p)}(t) = \gamma^{(p)}(t) \Lambda^{(p)}$ and $p$-dimensional Brownian motion $\mathbf{W}^{(p)}(t) = (W_1^{(p)}(t), \dots, W_t^{(p)}(t) )^T$. Suppose further that:
+    	Suppose that for all $p$, $X^{(p)}(t)$ is a $p$-dimensional process in class $\mathcal{C}$ with some drift process $\boldsymbol{\mu}(t) = (\mu_1^{(p)}(t), \dots, \mu_p^{(p)}(t))^T$, covolatility process $\Theta^{(p)}(t) = \gamma^{(p)}(t) \Lambda^{(p)}$ and $p$-dimensional Brownian motion $\mathbf{W}^{(p)}(t) = (W_1^{(p)}(t), \dots, W_p^{(p)}(t) )^T$. Suppose further that:
     	\begin{enumerate}
     		\item there exists $C_0 < \infty$ such that for all $p$ and all $j = 1, \dots, p$, $|\mu_j^{(p)}(t)| \leq C_0$ for all $t \in [0, 1]$ almost surely;
     		\item $\breve{\Sigma}_p = \Lambda^{(p)} ( \Lambda^{(p)})^T $ is (a possibly random) positive semi-definite $p \times p$ matrix such that its ESD $F^{\breve{\Sigma}_p}$ converges almost surely in distribution to a probability distribution $\breve{H}$ on $[0,\infty)$ as $p \rightarrow \infty$; moreover, $\breve{H}$ has a finite second moment;
@@ -818,7 +818,7 @@
     \end{defn}
     
     \begin{rmrk}
-    	Let us explain $\widetilde{\Sigma}_p$. Consider the simplest case when $\mu(t) = 0$, $\gamma(t)$ is deterministic, $\Lambda_t = \mathbb{I}_{p \times p}$, and $\tau_{\ell} = \ell / n$, $\ell = 0, 1, \dots, n$. In this case,
+    	Let us explain $\widetilde{\Sigma}_p$. Consider the simplest case when $\mu(t) = 0$, $\gamma(t)$ is deterministic, $\Lambda = \mathbb{I}_{p \times p}$, and $\tau_{\ell} = \ell / n$, $\ell = 0, 1, \dots, n$. In this case,
     	\[ \Delta \mathbf{X}_\ell = \sqrt{\int_{(\ell - 1)/n}^{\ell / n} \gamma^2(t) dt }\cdot \frac{\mathbf{Z}_\ell}{\sqrt{n}}, \]
     	where $\mathbf{Z}_\ell = (Z_{1\ell}, \dots, Z_{p\ell})^T$ is a vector of i.i.d. standard normal random variables. Hence,
     	\[ \frac{\Delta \mathbf{X}_\ell (\Delta \mathbf{X}_\ell)^T}{\| \Delta \mathbf{X}_\ell \|_2^2} = \frac{\mathbf{Z}_\ell \mathbf{Z}_\ell^T}{\|  \mathbf{Z}_\ell \|_2^2}. \]
@@ -956,7 +956,7 @@
     \end{rmrk}
     
     \begin{thm} \label{Thm 2}
-    	Suppose that for all $p$, $\mathbf{X}(t) = \mathbf{X}^{(p)}(t)$ is a $p$-dimensional process in class $\mathcal{C}$ for some drift process $\boldsymbol{\mu}^{(p)}(t) = (\mu_1^{(p)}(t), \dots , \mu_p^{(p)}(t))^T$, covolatility process $\Theta^{(p)}(t) = \gamma^{(p)}(t) \Lambda^{(p)}$ and a $p$-dimensional Brownian motion $\mathbf{W}_t^{(p)}$, which satisfy Assumptions \ref{asmp2} (i)-(vii) above. Suppose also that $p$ and $n$ satisfy Assumptions \ref{asmp2} (viii), and the observation times satisfy Assumptions \ref{asmp2} (ix). Let $\hat{\Sigma}_p$ be as in \eqref{TVARCV}. Then, as $p \rightarrow \infty$, $F^{\hat{\Sigma}_p}$ converges a.s. to a probability distribution $F$, which is determined by $H$ through Stieltjes transforms via the same Marchenko-Pastur equation as in Proposition \ref{MP law}.
+    	Suppose that for all $p$, $\mathbf{X}(t) = \mathbf{X}^{(p)}(t)$ is a $p$-dimensional process in class $\mathcal{C}$ for some drift process $\boldsymbol{\mu}^{(p)}(t) = (\mu_1^{(p)}(t), \dots , \mu_p^{(p)}(t))^T$, covolatility process $\Theta^{(p)}(t) = \gamma^{(p)}(t) \Lambda^{(p)}$ and a $p$-dimensional Brownian motion $\mathbf{W}^{(p)}(t)$, which satisfy Assumptions \ref{asmp2} (i)-(vii) above. Suppose also that $p$ and $n$ satisfy Assumptions \ref{asmp2} (viii), and the observation times satisfy Assumptions \ref{asmp2} (ix). Let $\hat{\Sigma}_p$ be as in \eqref{TVARCV}. Then, as $p \rightarrow \infty$, $F^{\hat{\Sigma}_p}$ converges a.s. to a probability distribution $F$, which is determined by $H$ through Stieltjes transforms via the same Marchenko-Pastur equation as in Proposition \ref{MP law}.
     \end{thm}
     \begin{proof}
     	We only need to show the convergence of $F^{\widetilde{\Sigma}_p}$. For notational ease, we shall omit the superscript $p$ in the arguments below: thus we write $\boldsymbol{\mu}(t)$ instead of $\boldsymbol{\mu}^{(p)}(t)$, $\gamma(t)$ instead of $\gamma^{(p)}(t)$, $\Lambda$ instead of $\Lambda^{(p)}$, etc. First, note that
@@ -1010,7 +1010,7 @@
     		|\mathbf{U}_\ell \mathbf{A} \mathbf{U}_\ell| \leq \|\mathbf{A}\| \cdot \|\mathbf{U}_\ell\|_2^2 \leq C_5 p^{\delta_2} \cdot \|\mathbf{U}_\ell\|_2^2
     	\end{equation}
     	Observe that for all $1 \leq i \leq \eta_p$, by Assumptions \ref{asmp2} (ii),
-    	\[ | Z_\ell^{(i)} |^2 = \frac{|\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma_t d\mathbf{W}_t|^2}{\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma_t^2 dt} \leq \frac{C_2^2}{\tau_\ell-\tau_{\ell-1} } \cdot \Bigg|\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma_t d\mathbf{W}_t \Bigg|^2. \] 
+    	\[ | Z_\ell^{(i)} |^2 = \frac{|\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma(t) d\mathbf{W}(t)|^2}{\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma(t)^2 dt} \leq \frac{C_2^2}{\tau_\ell-\tau_{\ell-1} } \cdot \Bigg|\int_{\tau_{\ell-1}}^{\tau_\ell} \gamma(t) d\mathbf{W}(t) \Bigg|^2. \] 
     	By Lemma \ref{BDG} , we then get that for any $k \in \MN$, there exists $\lambda_k > 0$ such that
     	\begin{equation} \label{338}
     		\ME[ |Z_\ell^{(i)}|^{2k} ] \leq \lambda_k C_2^{4k}.
@@ -1041,7 +1041,7 @@
     	 \[S_p \coloneqq \frac{1}{n} \sum_{\ell=1}^{n} \Lambda \mathbf{Z}_\ell (\mathbf{Z}_\ell)^T \Lambda^T.\]
     	 Moreover, by using the same trick as in the beginning of the proof of Theorem \ref{Thm 1}, $F^{S_p}$ has the same limit as $F^{S'_p}$, where
     	 \[S'_p \coloneqq \frac{1}{n} \sum_{\ell=1}^{n} \Lambda \widetilde{\mathbf{Z}}_\ell (\widetilde{\mathbf{Z}}_\ell)^T \Lambda^T\]
-    	 and $\widetilde{\mathbf{Z}}_\ell$ consists of i.i.d. standard normals. For $F^{S'_p}$, it follows easily from Proposition \ref{MP law} that it converges to $\widetilde{F}$, because $\breve{\Sigma}_p = \Lambda \Lambda^T$. Moreover, by Theorems 1.1 and 2.1 in Silverstein and Choi (1995), $\widetilde{F}$ is differentiable and in particular continuous at all $x > 0$. It follows from \eqref{339} that $F^{\widetilde{\Sigma}_p}$ must also converge to $\widetilde{F}$.
+    	 and $\widetilde{\mathbf{Z}}_\ell$ consists of i.i.d. standard normals. For $F^{S'_p}$, it follows easily from Proposition \ref{MP law} that it converges to $\widetilde{F}$, because $\breve{\Sigma}_p = \Lambda \Lambda^T$. Moreover, by Theorems 1.1 and 2.1 in Silverstein and Choi (1995) \cite{SilversteinChoi}, $\widetilde{F}$ is differentiable and in particular continuous at all $x > 0$. It follows from \eqref{339} that $F^{\widetilde{\Sigma}_p}$ must also converge to $\widetilde{F}$.
     \end{proof}
     
     
@@ -1055,7 +1055,7 @@
     		\item 
     		Let $\overline{W}(t)$, $t \geq 0$ be a standard Brownian motion. The \define{Vasicek model} for stochastic process is defined by the stochastic differential equation (SDE)
     		\begin{equation} \label{Vasicek}
-    		dZ(t) = \beta(\alpha - Z(t))dt + \xi \overline{W}(t),
+    		dZ(t) = \beta(\alpha - Z(t))dt + \xi d\overline{W}(t),
     		\end{equation}
     		where $\alpha$, $\beta$ and $\xi$ are positive constants. The solution can be determined in closed form and is
     		\[ Z(t) = Z(0) e^{-\beta t} + \alpha (1 - e^{-\beta t}) + \xi e^{-\beta t} \int_{0}^{t} e^{\beta s}d\overline{W}(s).\]
@@ -1084,7 +1084,7 @@
     		is met. This property makes CIR process a perfect tool for volatility (or interest rate) modeling. Also, $Y(t)$ has the same expectation as in Vasicek model, and its variance is
     		\[ \Var(Y(t)) = \frac{\xi^2}{\beta} Y(0) (e^{-\beta t} - e^{-2\beta t}) + \frac{\alpha \xi^2}{2\beta}(1-2e^{-\beta t} + e^{-2\beta t}). \]
     		
-    		\item The standard \define{Heston model} assumes that one-dimensional log-price process $X_t$ is determined by the following SDE:
+    		\item The standard \define{Heston model} assumes that one-dimensional log-price process $X(t)$ is determined by the following SDE:
     		\begin{equation}
     		dX(t) = \mu dt + \sqrt{Y(t)}d{W}(t),
     		\end{equation}
@@ -1099,7 +1099,7 @@
     
     \begin{rmrk}
     	If we are in a Heston model with $\rho(t) \equiv 0$, then we have a closed-form solution for $X(t)$:
-    	\[ X(t) \sim \mathcal{N}(\mu t, Y(t) \cdot t ), \]
+    	\[ X(t) \sim \mathcal{N}(\mu t, \int_0^t Y(s) ds ), \]
     	where $Y(t)$ is an independent CIR process and therefore conditionally on $t$ and other parameters has a scaled non-central chi-squared distribution. In the case of nonzero correlation between $Y(t)$ and $X(t)$ one can simulate $X(t)$, using, for example, either Euler discretization, or the exact simulation algorithm (see, e.g., Broadie and Kaya (2004) \cite{Broadie}).
     \end{rmrk}
     
@@ -1158,12 +1158,24 @@
     		\[ \tau_{j+1}^N - \tau_j^N \sim \operatorname{Exp}(\lambda) \quad \forall j \geq 1.  \]
     		Value $\tau_j^N$ defines the time of $j$-th jump. \define{The Poisson process} $N(t)$ counts the number of jumps that occur at or before time $t$. More precisely,
     		\[ N(t) = \sum_{j \geq 1} \mathbf{1}_{[\tau_j^N, \infty)} (t). \]
-    		Because the expected time between jumps is $1/\lambda$, the jumps are arriving at an average rate of $\lambda$ per unit time. We say the Poisson process $N(t)$ has intensity $\lambda$. The bigger $\lambda$ we have, the larger is the expected amount of jumps.
+    		Because the expected time between jumps is $1/\lambda$, the jumps are arriving at an average rate of $\lambda$ per unit time. We say the Poisson process $N(t)$ has intensity $\lambda$. The bigger $\lambda$ we have, the larger is the expected amount of jumps. The expected value of Poisson process is
+    		\[ 
+    		\begin{aligned}
+    		\ME[N(t)] &= \sum_{k=0}^{\infty} k \frac{(\lambda t)^k}{k!}e^{-\lambda t} = \lambda t \cdot e^{-\lambda t} \sum_{k=1}^{\infty} \frac{(\lambda t)^{k-1}}{(k-1)!} \\
+    		& = \lambda t \cdot e^{-\lambda t} \cdot e^{\lambda t} = \lambda t.
+    		\end{aligned}
+    		\]
     		\item Let $N(t)$ be a Poisson process with intensity $\lambda$, and let $Y_1, Y_2, \dots$ be a sequence of i.i.d. random variables with mean
     		\[ \beta = \ME[Y_1]. \]
     		We assume the random variables $Y_1, Y_2, \dots$ are also independent of $N(t)$. We define the \define{compound Poisson process}
     		\[ Q(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0. \]
-    		The jumps in $Q(t)$ occur at the same times as the jumps in $N(t)$, but whereas the jumps in $N(t)$ are always of size $1$, the $j$-th jump in $Q(t)$ is of random size $Y_j$.
+    		The jumps in $Q(t)$ occur at the same times as the jumps in $N(t)$, but whereas the jumps in $N(t)$ are always of size $1$, the $j$-th jump in $Q(t)$ is of random size $Y_j$. The mean of the compound Poisson process is
+    		\[ 
+    		\begin{aligned}
+    		\ME[Q(t)] & = \sum_{k = 0}^{\infty} \ME\Big[\sum_{i=1}^{n} Y_i | N(t) = k\Big] \MP(N(t) = k) \\
+    		& = \sum_{k = 0}^{\infty}  \beta k \frac{(\lambda t)^k}{k!} e^{-\lambda t} = \beta \lambda t e^{-\lambda t} \sum_{k = 1}^{\infty} \frac{(\lambda t)^{k-1}}{(k-1)!} = \beta \lambda t.
+    		\end{aligned}
+    		 \]
     		\item
     		Let $J(t)$ be an adapted, right-continuous \define{pure jump process} with $J(0) = 0$. By right-continuous we mean that $J(t) = \lim_{s \downarrow t}J(s)$ for all $t \geq 0$. In other words, if $J$ has a jump at time $t$, then $J(t)$ is the value of $J$ immediately.  A Poisson process and compound Poisson processes are the examples of pure jump processes. A process $X(t)$ of the form
     		\[ X(t) = \int_{0}^t \mu(s)ds + \int_{0}^{t} \sigma(s) dW(s) + J(t), \]
@@ -1181,37 +1193,41 @@
     	See Theorem 11.4.7 in Shreve (2004) \cite{Shreve}.
     \end{proof}
     
-    \begin{rmrk}
-    	Let us again look at the case with fixed $p$. Let also $\Theta(t)$ for simplicity be constant in $t$ and observation times equally spaced. In Example \ref{uniform jumps} we then have
-    	\[J_j(t) = a\mathbf{1}_{[U, 1]}(t) \quad \forall 1 \leq j \leq p \]
-    	and
-    	\[ \Sigma_p^{RCV} \xrightarrow{\MP} \Sigma_p + a^2\mathbb{U}_{p \times p}.  \]    	
-    	Let us consider the process, determined by the following SDE:
-    	\[ dX_j(t) = \sigma dW_j(t) + \Delta N_j(t) \quad \forall 1 \leq j \leq p, \]
-    	where $N_j(t)$ are independent Poisson processes. The probability that two jumps happen simultaneously is equal to $0$, hence
-    	\[ [X_i, X_j](t) = \sigma^2 \quad \forall 1 \leq i \neq j \leq p. \]
-    	Recall that the size of the jumps of Poisson process is equal to $1$ and therefore,
-    	\[ \Sigma_p^{RCV} \xrightarrow{\MP} \Sigma_p + \Sigma_p^N\]
-    	with
-    	\[
-    	 \Sigma_p^N \coloneqq \begin{pmatrix}
-    	\sum_{i \geq 1} \mathbf{1}_{[0, 1]} (\tau_i^{N_1}) & \cdots & 0 \\
-    	\vdots & \ddots & \vdots \\
-    	0 & \cdots & \sum_{i \geq 1} \mathbf{1}_{[0, 1]} (\tau_i^{N_p})
-    	\end{pmatrix}
-    	. \]
-    	The limit of $\Sigma_p^{RCV}$ is no longer deterministic, because diagonal elements of $\Sigma_p^N$ are random. \\
-    	Now let us set $p \rightarrow \infty$ with the same rate as $n$. Matrix $\Sigma_p^N$ won't be diagonal anymore, because the probability that we observe multiple jumps at the same time is bigger than $0$. Moreover, all its elements are non-negative, which means that the limit of $\Sigma_p^{RCV}$ will be bigger, than $\Sigma_p$ and their ESD will be different. Let us replace Poisson process $N(t)$ with compound Poisson process $Q(t)$ with $\beta = \ME[Y_1] = 0$. Then $\mathbf{X}(t)$ stays a martingale and the natural question then is, will ESD of RCV or TVARCV converge to Marchenko-Pastur law? We will study this case in the next chapter.
+    \begin{rmrk} \
+    	\begin{enumerate}
+    		\item Let us again look at the case with fixed $p$. Let also $\Theta(t)$ for simplicity be constant in $t$ and observation times equally spaced. In Example \ref{uniform jumps} we then have
+    		\[J_j(t) = a\mathbf{1}_{[U, 1]}(t) \quad \forall 1 \leq j \leq p \]
+    		and
+    		\[ \Sigma_p^{RCV} \xrightarrow{\MP} \Sigma_p + a^2\mathbb{U}_{p \times p}.  \]
+    		\item Let us consider the process, determined by the following SDE:
+    		\[ dX_j(t) = \sigma_j dW_j(t) + \Delta N_j(t) \quad \forall 1 \leq j \leq p, \]
+    		where $N_j(t)$ are independent Poisson processes. The probability that two jumps happen simultaneously is equal to $0$, hence
+    		\[ [X_j](t) = \sigma_j^2 + \sum_{i \geq 1} \mathbf{1}_{[0, 1]} (\tau_i^{N_j}), \quad \forall 1 \leq j \leq p, \]
+    		and
+    		\[ [X_i, X_j](t) = \sigma_i \sigma_j, \quad \forall 1 \leq i \neq j \leq p. \]
+    		Recall that the size of the jumps of Poisson process is equal to $1$ and therefore,
+    		\[ \Sigma_p^{RCV} \xrightarrow{\MP} \Sigma_p + \Sigma_p^N\]
+    		with
+    		\[
+    		\Sigma_p^N \coloneqq \begin{pmatrix}
+    		\sum_{i \geq 1} \mathbf{1}_{[0, 1]} (\tau_i^{N_1}) & \cdots & 0 \\
+    		\vdots & \ddots & \vdots \\
+    		0 & \cdots & \sum_{i \geq 1} \mathbf{1}_{[0, 1]} (\tau_i^{N_p})
+    		\end{pmatrix}
+    		. \]
+    		The limit of $\Sigma_p^{RCV}$ is no longer deterministic, because diagonal elements of $\Sigma_p^N$ are random. 
+    		\item Now let us set $p \rightarrow \infty$ with the same rate as $n$. Matrix $\Sigma_p^N$ won't be diagonal anymore, because the probability that we observe multiple jumps at the same time is bigger than $0$. Moreover, all its elements are non-negative, which means that the elements of $\Sigma_p^{RCV}$ will be bigger or equal elements of than $\Sigma_p$, and their ESDs will be different. Let us replace Poisson process $N(t)$ with compound Poisson process $Q(t)$ with $\beta = 0$. Then $\mathbf{X}(t)$ becomes a martingale and the natural question then is, will ESD of RCV or TVARCV converge to Marchenko-Pastur law? We will study this case in the following chapter.
+    	\end{enumerate}
     \end{rmrk}
     
     \chapter{Simulation studies}
     
     \begin{rmrk}
-    	BLA BLA BLA Here we do simulations
+    	In order to verify the results from the previous chapters, we will run simulations here, using different settings, such as $n/p$ ratio, observation times, covolatility process and existence of jumps. The results of the simulations are stated here, the code can be found in Appendix B.
     \end{rmrk}
     
     \begin{exmp} \label{SimCos}
-    	Let's take an example from the paper... Assume we have equidistant observation times $\tau_{\ell} = \ell / n$, $\boldsymbol{\mu}(t) \equiv 0$ and
+    	Let's take an example from the paper of Zheng and Li (2011) \cite{Main}. Assume we have equidistant observation times $\tau_{\ell} = \ell / n$, $\boldsymbol{\mu}(t) \equiv 0$ and
     	\[
     	\gamma(t) = \sqrt{0.0009 + 0.0008 \cos(2 \pi t)}.
     	\]
@@ -1221,9 +1237,9 @@
     	\[ \Delta X_{jl} = X_j(\ell/n) - X_j((\ell-1)/n) \sim \mathcal{N}(0, \Gamma_\ell / n ), \]
     	for all $1 \leq j \leq p$, where
     	\[ \Gamma_\ell = \int_{(\ell-1)/n}^{\ell / n} \gamma^2(t)dt = 0.0009 + 0.0008 \cdot \frac{ \sin(2\pi \ell / n )-\sin(2\pi (\ell-1) / n ) }{2\pi}. \]
-    	The simulations show that TVARCV estimator converges asymptotically to Marchenko-Pastur law, while RCV doesn't. \\
-    	Firstly, we are in a setting $y = 4$. Then $a = \sigma^2 = 0.0009$ and $b = 9\sigma^2 = 0.0081$. The process $\mathbf{X}(t)$, LSD histograms and plot of the density of Marchenko-Pastur law are shown on Figure 6.1. \\
-    	In the second case, we run simulations for $y = 1$. Then $a = 0$ and $b = 4\sigma^2 = 0.0036$. We will compare it with the next setting.
+    	The simulations show that TVARCV estimator converges asymptotically to Marchenko-Pastur law, while RCV does not.
+    	Firstly, we are in a setting $y = 4$. Then $a = \sigma^2 = 0.0009$ and $b = 9\sigma^2 = 0.0081$. The process $\mathbf{X}(t)$, LSD histograms and plot of the density of Marchenko-Pastur law are shown on Figure 6.1.
+    	In the second case, we run simulations for $y = 1$. Then $a = 0$ and $b = 4\sigma^2 = 0.0036$. The result can be seen on Figure 6.2. We will compare it with the next setting.
     \end{exmp}
     
     \begin{figure}[ht]
@@ -1244,11 +1260,11 @@
     	Define
     	\[ \mathcal{T} = \{\tau_\ell : \tau_\ell \in [0, 1]\}, \]
     	then by setting $\lambda = \frac{1}{n}$, we get $\#\mathcal{T} \sim n$.
-    	Let's take volatility $\gamma_t$ as in Example \ref{SimCos}. Then we have 
+    	Let's take volatility $\gamma(t)$ as in Example \ref{SimCos}. Then we have 
     	\[ \Delta X_{jl} = X_j(\tau_\ell) - X_j(\tau_{\ell-1}) \sim \mathcal{N}(0, \Gamma_\ell \cdot (\tau_\ell - \tau_{\ell-1})), \]
     	for all $1 \leq j \leq p$, with
     	\[ \Gamma_\ell = \int_{\tau_{\ell-1}}^{\tau_\ell} \gamma^2(t)dt = 0.0009 + 0.0008\cdot \frac{ \sin(2\pi \tau_\ell )-\sin(2\pi \tau_{\ell-1} ) }{2\pi}. \]
-    	According to Proposition \ref{prps ups} different intervals between observation times will affect RCV as strong as fluctuating volatility, and we observe it on the Figure 6.3.
+    	According to Proposition \ref{prps ups} different intervals between observation times affect RCV as strong as fluctuating volatility, and we can observe it on the Figure 6.3.
     \end{exmp}
     
     \begin{figure}
@@ -1269,11 +1285,11 @@
     \end{figure}
     
     \begin{exmp} \label{SimCIR}
-    	Let's assume
+    	Now let us look at the case with stochastic volatility. Assume that
     	\[ \gamma(t) = \sqrt{Y(t)}, \]
-    	where $Y_t$ is a CIR process, determined by \eqref{CIR}. Then it is easy to see that
-    	\[ \sigma^2 = \beta\alpha - \beta\int_{0}^{1} \gamma^2(t)dt + \xi \int_{0}^{1} \gamma(t) d\overline{W}(t).\]
-    	Therefore, as long as $\xi > 0$, the value of $\sigma^2$ is random and for different realizations of $\gamma_t$ we have different LSD.
+    	where $Y(t)$ is a CIR process, determined by \eqref{CIR}. Then it is easy to see that
+    	\[ \sigma^2 = \alpha + \frac{1}{\beta} \Big(\xi \int_{0}^{1} \gamma(t) d\overline{W}(t) - \gamma^2(t)\Big). \] 
+    	Therefore, as long as $\xi > 0$, the value of $\sigma^2$ is random and for different realizations of $\gamma(t)$ we have different LSD.
     	Moreover, let
     	\[ \overline{W}(t) = \frac{1}{\sqrt{\eta_p}} \sum_{j=1}^{\eta_p}W_j(t), \]
     	where $\eta_p$ is determined by Assumption \ref{asmp2} (ii). The process $\overline{W}(t)$ is still the standard Brownian motion, because it is a.s. continuous, has independent increments and
@@ -1281,12 +1297,12 @@
     \end{exmp}
     
     \begin{rmrk}
-    	Theorem \ref{Thm 2} states that as long $\eta_p = o(p)$, TVARCV will converge to Marchenko-Pastur law. But let us take $\eta_p = p$, that means that $\overline{W}(t)$ is a sample average of $\mathbf{W}(t)$ and depends on every of its component $W_j(t)$. Simulations show that even in this case, when Assumptions \ref{asmp2} (ii) are not satisfied, Theorem \ref{Thm 2} still holds and ESD of $\widehat{\Sigma}_p$ converges to Marchenko-Pastur law. Intuitively it can be explained in the following way: \\
+    	Theorem \ref{Thm 2} states that as long $\eta_p = o(p)$, TVARCV will converge to Marchenko-Pastur law. But let us take $\eta_p = p$, which means now that $\overline{W}(t)$ is a sample average of the elements of $\mathbf{W}(t)$. Simulations show that even in this case, when Assumptions \ref{asmp2} (ii) are not satisfied, Theorem \ref{Thm 2} still holds and ESD of $\widehat{\Sigma}_p$ converges to Marchenko-Pastur law. Intuitively it can be explained in the following way: \\
     	For any $1 \leq i \leq p$ we have
     	\[ dW_i(t) \cdot d\overline{W}(t) = dW_i(t) \cdot \frac{1}{\sqrt{\eta_p}} \sum_{j=1}^{\eta_p}dW_j(t) = \frac{dt}{\sqrt{\eta_p}} \mathbf{1}_{\{i \leq \eta_p\}}, \]
     	or equivalently 
     	\[ [W_i, \overline{W}](t) =  \frac{t}{\sqrt{\eta_p}} \mathbf{1}_{\{i \leq \eta_p\}} \leq \frac{1}{\sqrt{\eta_p}} .  \]
-    	Hence, with growing $\eta_p$ $\overline{W}_t$ is based on bigger amount of components of $\mathbf{W}(t)$, but the dependence becomes smaller and for $\eta_p = p \rightarrow \infty$ correlation between $\overline{W}_t$ and any component of $\mathbf{W}(t)$ goes to $0$.
+    	With growing $\eta_p$ $\overline{W}(t)$ is based on bigger amount of elements of $\mathbf{W}(t)$. On the other hand, the dependence of $\overline{W}(t)$ on $W_j(t)$, $1 \leq j \leq \eta_p$, decreases. Therefore for $\eta_p = p \rightarrow \infty$ correlation between $\overline{W}(t)$ and any component of $\mathbf{W}(t)$ goes to $0$ and they can be considered as independent.
     \end{rmrk}
     
     \begin{figure}[ht]
@@ -1300,18 +1316,19 @@
     \end{figure}
     		
     \begin{exmp}
-    	Let $Y_1, Y_2, \dots$ be i.i.d. random variables $\sim \mathcal{N}(0, 1)$. Let also 
+    	Now we are in the case of jump-diffusion processes. Let $Y_1, Y_2, \dots$ be i.i.d. random variables $\sim \mathcal{N}(0, 1)$. Let also 
     	\[ \mathbf{N}(t) = (N_1(t), \dots, N_p(t))^T \]
-    	be a vector of independent Poisson processes all with intensity $\lambda$ and
+    	be a vector of independent Poisson processes, all with intensity $\lambda$, and
     	\[d\mathbf{X}(t) = d\mathbf{W}(t) + \mathbf{Q}(t),  \]
     	where $\mathbf{Q}(t) = (Q_1(t), \dots, Q_p(t))^T $ is a vector of compound Poisson processes, whose components are
     	\[ Q_j(t) = \sum_{i=1}^{N_j(t)} Y_i \quad \forall 1 \leq j \leq p. \]
-    	Note, that $Q_j(t)$ are martingales. \\
-    	Let us first be in a setting $\lambda = 1$. Then we can see on a figure that both RCV and TVARCV fail. \\
-    	However, if we set $\lambda \rightarrow 0$, jumps will happen too frequently and $\mathbf{Q}(t)$ will converge to the simple diffusion process. Due to normality of $Y_i$ in this example, we get
+    	Note, that $Q_j(t)$ are martingales, because $\beta = \ME[Y_1] = 0$. \\
+    	Let us first be in a setting with rate $\lambda = 1$. Then we can see on a Figure 6.5 that the convergence for both RCV and TVARCV fails as it was expected. \\
+    	However, if we now set $\lambda \rightarrow \infty$, jumps will happen too frequently and $\mathbf{Q}(t)$ will converge to the pure diffusion process. Due to normality of $Y_i$ in this example, we get
     	\[d\mathbf{Q}(t) \simeq \frac{1}{\sqrt{dt}} d\overline{\mathbf{W}}(t),  \]
     	where $\overline{\mathbf{W}}(t)$ is a $p$-dimensional standard Brownian motion. Then, roughly speaking,
     	\[ \Sigma_p \simeq n \mathbb{I}_{p \times p}. \]
+    	On the Figure 6.6 one can see that for constant covolatility process $\gamma(t)=1$ ESDs of both TVARCV and RCV converge to Marchenko-Pastur law with $\sigma^2 = n$. Moreover, assume now that $Y_i$ obey other distribution then normal, for example, uniform, then if this law has finite mean and variance, we still have the convergence with $\lambda \rightarrow \infty$. On the Figure 6.7. we see that ESDs coincide with Marchenko-Pastur law with $\sigma^2 = \Var(Y_1) \cdot n = n/3$.
     \end{exmp}
     
     
@@ -1331,31 +1348,31 @@
        		\caption{$n = 1000$, $p = 500$, $\lambda = 10000$, $Y_1 \sim \mathcal{N}(0, 1)$}
        		\smallskip
        		\small
-       		We observe that jump-diffusion process converges to pure-diffusion process.
+       		We observe that jump-diffusion process converges to pure-diffusion process, and therefore due to constant volatility, ESDs of RCV and TVARCV converge to Marchenko-Pastur law.
        	\end{center}
        	\begin{center} \centering
        		\includegraphics[scale=0.4]{XCompounduni}
-       		\caption{$n = 1000$, $p = 500$, $\lambda = 10000$, $Y_1 \sim \mathcal{U}(0, 1)$}
+       		\caption{$n = 1000$, $p = 500$, $\lambda = 10000$, $Y_1 \sim \mathcal{U}[-1, 1]$}
        		\smallskip
        		\small
-       		Jump-diffusion process still converges to pure diffusion process due to Central Limit Theorem, as long as the variance of $Y_i$ is finite.
+       		Jump-diffusion process converges to pure diffusion process due to Central Limit Theorem, as long as the variance of $Y_i$ is finite, and therefore convergence of ESD for both RCV and TVARCV still holds.
        	\end{center}
     \end{figure}
     
     \begin{rmrk}
-    	For TVARCV to converge to Marchenko-Pastur law, it is sufficient, but not necessary, that $\mathbf{X}(t)$ belongs to the class $\mathcal{C}$. It is noteworthy to show that there can be the case when we have convergence even for RCV.
+    	For ESD of TVARCV to converge to Marchenko-Pastur law, it is sufficient, but not necessary, that $\mathbf{X}(t)$ belongs to the class $\mathcal{C}$. It is noteworthy to show that there can be the case when our main assumptions are not satisfied, but we still have the convergence even for ESD of RCV.
     \end{rmrk}
     \begin{exmp} \label{counter exmpl}
     	Let drift process be as usual $\boldsymbol{\mu}(t) \equiv 0$ and $\Theta(t)$ be diagonal matrix, which elements are:
     	\[ \Big(\Theta(t)\Big)_{jj} = \sin(\pi t) \mathbf{1}_{\{j \leq p/2\}} + \cos(\pi t) \mathbf{1}_{\{j > p/2\}}, \quad 1 \leq j \leq p.  \]
-    	In other words, first $p/2$ elements of the diagonal of $\Theta(t)$ are $\cos(\pi t)$ and the others are $\sin(\pi t)$. It is obvious, that $\mathbf{X}(t)$ doesn't belong to the class $\mathcal{C}$. The ICV matrix is in this case
+    	In other words, first $p/2$ elements of the diagonal of $\Theta(t)$ are $\sin(\pi t)$ and the others are $\cos(\pi t)$. It is obvious, that $\mathbf{X}(t)$ doesn't belong to the class $\mathcal{C}$. The ICV matrix is in this case
     	\[ \Sigma_p = \begin{pmatrix}
     	\int_{0}^{1} \cos(\pi t)^2 dt & \cdots & 0 \\
     	\vdots & \ddots & \vdots \\
     	0 & \cdots & \int_{0}^{1} \sin(\pi t)^2 dt
     	\end{pmatrix} 
     	= \frac{1}{2} \mathbb{I}_{p \times p}. \]
-    	WHAT DO WE SEEE?
+    	However, if we take a look at the Figure 6.8, we can see that surprisingly not only ESD of TVARCV converges to $\mathcal{MP}(y, 1/2)$, but also ESD of RCV does.
     \end{exmp}
     
     \begin{figure}
@@ -1364,21 +1381,21 @@
     		\caption{ $\mathbf{X}(t)$ from Example \ref{counter exmpl}, $n = 3000$, $p=1000$ }
     		\smallskip
     		\small
-    		Blue and green histograms coincide with each other and Marchenko-Pastur law.
+    		Here we observe the phenomena: blue and green histograms coincide with each other and with Marchenko-Pastur law, even if $\mathbf{X}(t)$ doesn't belong to classs $\mathcal{C}$.
     	\end{center}
     	\begin{center} \centering
     		\includegraphics[scale=0.4]{counter2}
     		\caption{ $\mathbf{X}(t)$ from Example \ref{counter exmpl2}, $n = 3000$, $p=1000$ }
     		\smallskip
     		\small
-    		TVARCV and RCV give different results, which are both distinct from Marchenko-Pastur law.
+    		Now TVARCV and RCV give different results, which are both distinct from the Marchenko-Pastur law.
     	\end{center}
     \end{figure}
     
     \begin{exmp} \label{counter exmpl2}
     	Let us change slightly the structure of $\Theta(t)$:
     	\[ \Big(\Theta(t)\Big)_{jj} = \sin(\pi t) \mathbf{1}_{\{j \leq p/4\}} + \cos(\pi t) \mathbf{1}_{\{j > p/4\}}, \quad 1 \leq j \leq p.\]
-    	The ICV matrix $\Sigma_p$ remains the same. But we can observe from Figure 6.9 that both estimators RCV and TVARCV do not converge to Marchenko-Pastur law anymore. Note, however, that if we fill diagonals $\Theta(t)$ with only $\cos(\pi t)$ or $\sin(\pi t)$, then $\mathbf{X}(t)$ belongs to class $\mathcal{C}$ and TVARCV (but not RCV) converges to $\mathcal{MP}(y, \sigma^2)$.
+    	The ICV matrix $\Sigma_p$ remains the same. But we can observe from Figure 6.9 that ESDs of both RCV and TVARCV do not converge to Marchenko-Pastur law anymore. Note, however, that if we fill diagonals $\Theta(t)$ with only $\cos(\pi t)$ or $\sin(\pi t)$, then $\mathbf{X}(t)$ belongs to class $\mathcal{C}$ and TVARCV (but not RCV) converges to $\mathcal{MP}(y, \sigma^2)$.
     \end{exmp}
     
     \appendix
@@ -1758,7 +1775,6 @@ def get_data_stochastic_gamma(n, p):
 \end{python}
     	
    	% bibliography, glossary and index would go here.
-   	\addcontentsline{toc}{part}{Bibliography}
    	\bibliographystyle{stylefile}
    	\bibliography{biblio}
    	

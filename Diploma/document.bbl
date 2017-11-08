@@ -24,6 +24,13 @@ J.W.~Silverstein. Strong convergence of the empirical distribution of
   eigenvalues of large-dimensional random matrices.
 \newblock J. Multivariate analysis, 1995.
 
+\bibitem{Karoui}
+\selectlanguageifdefined{russian}
+Karoui~Noureddine~El. Spectrum estimation for large dimensional covariance
+  matrices using random matrix theory.
+\newblock University of California, Berkeley: Institute of Mathematical
+  Statistics, 2008.
+
 \bibitem{Bai}
 \selectlanguageifdefined{russian}
 Z.D.~Bai. Methodologies in spectral analysis of large-dimensional random
@@ -61,6 +68,12 @@ Z.D.~Bai, W.~Silverstein~J. No eigenvalues outside the support of the limiting
 Zheng~Xinghua, Li~Yingying. On the estimation of integrated covariance matrices
   of high dimensional diffusion processes.
 \newblock Hong Kong: Institute of Mathematical Statistics, 2011.
+
+\bibitem{SilversteinChoi}
+\selectlanguageifdefined{russian}
+J.W.~Silverstein, S.I.~Choi. Analysis of the limiting spectral distribution of
+  large-dimensional random matrices.
+\newblock J. Multivariate Analysis, 1995.
 
 \bibitem{Broadie}
 \selectlanguageifdefined{russian}

@@ -9,8 +9,7 @@
 \contentsline {section}{\numberline {3.1}Limiting distribution for realized covariance}{21}
 \contentsline {section}{\numberline {3.2}Time-variance adjusted realized covariance}{30}
 \contentsline {chapter}{\numberline {4}Stochastic volatility case}{39}
-\contentsline {chapter}{\numberline {5}Jump-diffusion processes}{41}
-\contentsline {chapter}{\numberline {6}Simulation studies}{45}
-\contentsline {chapter}{\numberline {A}Distribution function for Marchenko-Pastur law}{53}
-\contentsline {chapter}{\numberline {B}Python code}{55}
-\contentsline {part}{Bibliography}{63}
+\contentsline {chapter}{\numberline {5}Jump-diffusion processes}{43}
+\contentsline {chapter}{\numberline {6}Simulation studies}{47}
+\contentsline {chapter}{\numberline {A}Distribution function for Marchenko-Pastur law}{55}
+\contentsline {chapter}{\numberline {B}Python code}{57}
